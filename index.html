@@ -1,81 +1,265 @@
-<html>
-    <head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Karan Kumar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Karan Kumar">
+    <meta name="keywords" content="Karan Kumar, game theory, BibTeX, economic theory, microeconomic theory, industrial organization, rational choice theory, mechanism design, mathematical methods for economists">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles to override or extend Tailwind for specific elements */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light grey background */
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+        }
 
-        <meta charset="utf-8" />
-        <title>Karan Kumar</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="author" content="Karan Kumar">
-        <meta name="keywords" content="Karan Kumar, game theory, BibTeX, economic theory, microeconomic theory, industrial organization, rational choice theory, mechanism design, mathematical methods for economists">
-    </head>
+        /* Main content area */
+        .main-content-wrapper {
+            display: flex;
+            flex-wrap: wrap; /* Allows columns to wrap if necessary, but we'll try to prevent it */
+            flex-grow: 1;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
 
-    <body itemscope itemtype="http://schema.org/WebPage">
-        
-        <section>
-            <div class="row">
-                <div class="leftcolumn">
-                </div>
-                <div class="column">
-                    <h1><center>Karan Kumar</center></h1>
-                    <span itemprop="name" itemscope itemtype="http://schema.org/Person">
-                        <meta itemprop="name" content="Karan Kumar" />
-                        <meta itemprop="affiliation" content="Indian Statistical Institute, Delhi" />
-                        </span>
-                    <p class="first" style="margin-bottom:0.6em;">
-                        I'm an PhD student at <a href="https://isid.ac.in"> ISI, Delhi </a>. My interests lie primarily in economic theory - axiomatic choice theory, game theory, mechanism design, industrial organization. I also dabble in applied microeconmic theory, especially in the confluence of pure theory of international trade and environmental economics to tackle the regulatory response to climate change. I did my masters - MA in Economics (with specialization in World Economy)  from <a href = "https://jnu.ac.in/sis/cswe"> CITD, JNU </a>  and bachelors - BA(Hons) from <a href = "https://svc.ac.in/"> Sri Venkateswara College, University of Delhi.</a>
-                    </p>
-                </div>
-            </div>
-        </section>
-        
-        <section>
-            <div class="row">
-                <header class="leftcolumn">
-                    <h2 class="Tutorials">Tutorials</h2>
-                </header>
-                <div class="column">
-                    <ul class="gs">
-                        
-                    </ul>
-                </div>
-            </div>
-        </section>
+        /* Left column for navigation/sidebar */
+        .leftcolumn {
+            flex: 0 0 250px; /* Fixed width for left column */
+            background-color: #e2e8f0; /* Grey background for navigation box */
+            padding: 2rem;
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            margin-right: 1.5rem; /* Space between left and right columns */
+            align-self: flex-start; /* Align to the top */
+            position: sticky; /* Sticky navigation */
+            top: 2rem; /* Stick at 2rem from top */
+            height: fit-content; /* Only take height needed by content */
+            min-width: 180px; /* Minimum width to prevent content squishing too much */
+        }
 
-        <section>
-            <div class="row">
-                <header class="leftcolumn">
-                    <h2 class="research">Upcoming Articles</h2>
-                </header>
-                <div class="column">
-                    <ul class="gs">
-                        
-                    </ul>
-                </div>
-            </div>
-        </section>
-      
+        /* Main column for content */
+        .column {
+            flex: 1; /* Takes remaining space */
+            background-color: #ffffff;
+            padding: 2.5rem;
+            border-radius: 0.75rem; /* Rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+            min-width: 300px; /* Minimum width for readability of main content */
+        }
 
-        <section>
-            <div class="row">
-                <header class="leftcolumn">
-                    <h2 class="contact">contact</h2>
-                </header>
-                <div class="column">
-                    <ul class="gs">
-                        <li><span class="black"><code>kthesmart4</code> on <code>gmail</code></span></li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+        /* Responsive adjustments for smaller screens */
+        @media (max-width: 1024px) { /* Adjust breakpoint for tablet/smaller desktop */
+            .main-content-wrapper {
+                /* Keep flex-direction: row to keep them side-by-side */
+                margin: 1.5rem auto;
+                padding: 0 1rem;
+            }
+            .leftcolumn {
+                flex: 0 0 200px; /* Slightly smaller fixed width on tablets */
+                margin-right: 1rem;
+                padding: 1.5rem;
+                min-width: 150px; /* Adjust min-width */
+            }
+            .column {
+                padding: 1.5rem;
+                min-width: 280px; /* Adjust min-width */
+            }
+        }
 
-        <section>
-            <div class="row">
-                <div class="leftcolumn">
-                </div>
-                <footer class="column">
-                    Page last modified 01.06.2025.  All material copyright &copy; <a href="index.html">Karan Kumar</a> 2025.
-                </footer>
-            </div>
-        </section>
+        @media (max-width: 768px) { /* Even smaller screens, still side-by-side but tighter */
+            .leftcolumn {
+                flex: 0 0 150px; /* Even smaller fixed width */
+                margin-right: 0.75rem;
+                padding: 1rem;
+                min-width: 120px; /* Further adjust min-width */
+            }
+            .column {
+                flex: 1;
+                min-width: 200px; /* Allow main content to shrink more */
+                padding: 1rem;
+            }
+            /* Reduce font sizes for very small screens to fit content better */
+            h1 {
+                font-size: 2.2rem !important;
+            }
+            h2 {
+                font-size: 1.6rem !important;
+            }
+            p {
+                font-size: 1rem !important;
+            }
+        }
+
+        /* Typography */
+        h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1a202c; /* Dark grey for main heading */
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: #2d3748; /* Slightly lighter dark grey for subheadings */
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid #edf2f7; /* Light border */
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: #4a5568; /* Medium grey for body text */
+        }
+
+        a {
+            color: #1a202c; /* Dark text for contrast on yellow */
+            background-color: #FFFF00; /* Yellow highlight for links */
+            text-decoration: none;
+            transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+            padding: 0.1em 0.3em; /* Small padding for highlight */
+            border-radius: 0.2em; /* Slightly rounded corners for highlight */
+            display: inline-block; /* Allows padding and background to apply correctly */
+        }
+
+        a:hover {
+            background-color: #FFD700; /* Slightly darker yellow on hover */
+            color: #000; /* Black text on hover */
+            text-decoration: none; /* No underline on hover */
+        }
+
+        /* Removed font-style: italic from .first */
+        .first {
+            font-weight: 400;
+            color: #2d3748; /* Slightly darker for the intro paragraph */
+        }
+
+        ul.gs {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        ul.gs li {
+            margin-bottom: 0.75rem;
+            font-size: 1.05rem;
+            color: #4a5568;
+        }
+
+        code {
+            background-color: #edf2f7; /* Light background for code */
+            padding: 0.2rem 0.4rem;
+            border-radius: 0.25rem;
+            font-family: 'Consolas', 'Monaco', monospace;
+            font-size: 0.9em;
+            color: #c53030; /* Reddish color for code */
+        }
+
+        /* Navigation specific styles - styled to look like headings */
+        .nav-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-list li {
+            margin-bottom: 1rem; /* More space between nav items */
+        }
+
+        .nav-list a {
+            /* Override general link styles for navigation to make them look like headings */
+            display: block;
+            padding: 0.5rem 0;
+            font-weight: 600; /* Bold like headings */
+            font-size: 1.2rem; /* Larger font size */
+            color: #2d3748; /* Darker color for nav headings */
+            background-color: transparent; /* No yellow highlight in nav */
+            text-decoration: none;
+            transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
+            border-radius: 0; /* No border radius */
+        }
+
+        .nav-list a:hover {
+            color: #3182ce;
+            text-decoration: none;
+            transform: translateX(5px); /* Slight slide effect on hover */
+            background-color: transparent; /* Keep background transparent */
+        }
+
+        /* Footer styles */
+        footer {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #718096; /* Grey for footer text */
+            margin-top: 2rem;
+            padding: 1.5rem;
+            background-color: #e2e8f0; /* Slightly darker background for footer */
+            border-top: 1px solid #cbd5e0; /* Light border on top */
+            border-radius: 0.75rem;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.03);
+            max-width: 1200px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box; /* Ensure padding is included in width */
+        }
+    </style>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+    <div class="main-content-wrapper">
+        <div class="leftcolumn">
+            <ul class="nav-list">
+                <li><a href="#about">About</a></li>
+                <li><a href="#tutorials">Upcoming Tutorials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="column">
+            <section id="about" class="mb-8">
+                <h1 class="text-center">Karan Kumar</h1>
+                <span itemprop="name" itemscope itemtype="http://schema.org/Person">
+                    <meta itemprop="name" content="Karan Kumar" />
+                    <meta itemprop="affiliation" content="Indian Statistical Institute, Delhi" />
+                </span>
+                <p class="first">
+                    I'm a PhD student at <a href="https://isid.ac.in" target="_blank" rel="noopener noreferrer">ISI, Delhi</a>. My interests lie primarily in economic theory - axiomatic choice theory, game theory, mechanism design, industrial organization. I also dabble in applied microeconomic theory, especially in the confluence of pure theory of international trade and environmental economics to tackle the regulatory response to climate change. I did my masters - MA in Economics (with specialization in World Economy) from <a href="https://jnu.ac.in/sis/cswe" target="_blank" rel="noopener noreferrer">CITD, JNU</a> and bachelors - BA(Hons) from <a href="https://svc.ac.in/" target="_blank" rel="noopener noreferrer">Sri Venkateswara College, University of Delhi.</a>
+                </p>
+            </section>
             
-    </body>
+            <section id="tutorials" class="mb-8">
+                <h2 class="Tutorials">Upcoming Tutorials</h2>
+                <ul class="gs">
+                    <li><strong>Tutorial 1: Introduction to Game Theory</strong> - A beginner-friendly guide to core concepts.</li>
+                    <li><strong>Tutorial 2: Mechanism Design Basics</strong> - Understanding how to design efficient economic systems.</li>
+                    <li><strong>Tutorial 3: Axiomatic Choice Theory Explained</strong> - Delving into the foundations of rational decision-making.</li>
+                </ul>
+            </section>
+          
+            <section id="contact" class="mb-8">
+                <h2 class="contact">Contact</h2>
+                <ul class="gs">
+                    <li><span class="black">Email: <code>kthesmart4</code>@<code>gmail.com</code></span></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        Page last modified 01.06.2025. All material copyright &copy; <a href="index.html">Karan Kumar</a> 2025.
+    </footer>
+</body>
 </html>
