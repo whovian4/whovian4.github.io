@@ -5,13 +5,13 @@
     <title>Karan Kumar</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Karan Kumar">
-    <meta name="keywords" content="Karan Kumar, game theory, economic theory, microeconomic theory, industrial organization, rational choice theory, mechanism design, mathematical methods for economists">
+    <meta name="keywords" content="Karan Kumar, game theory, BibTeX, economic theory, microeconomic theory, industrial organization, rational choice theory, mechanism design, mathematical methods for economists">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles to override or extend Tailwind for specific elements */
         body {
-            font-family: '', sans-serif;
+            font-family: 'Inter', sans-serif;
             background-color: #f0f2f5; /* Light grey background */
             color: #333;
             line-height: 1.6;
@@ -36,7 +36,7 @@
         /* Left column for navigation/sidebar */
         .leftcolumn {
             flex: 0 0 250px; /* Fixed width for left column */
-            background-color: #e2e8f0; /* Grey background for navigation box */
+            background-color: #d1d5db; /* Darker grey background for navigation box */
             padding: 2rem;
             border-radius: 0.75rem; /* Rounded corners */
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Subtle shadow */
@@ -91,7 +91,7 @@
             }
             /* Reduce font sizes for very small screens to fit content better */
             h1 {
-                font-size: 2.2rem !important;
+                font-size: 2.5rem !important; /* Adjusted for mobile */
             }
             h2 {
                 font-size: 1.6rem !important;
@@ -103,7 +103,7 @@
 
         /* Typography */
         h1 {
-            font-size: 3rem;
+            font-size: 4rem; /* Bigger size for Karan Kumar's name */
             font-weight: 700;
             color: #1a202c; /* Dark grey for main heading */
             margin-bottom: 1rem;
@@ -184,15 +184,25 @@
             padding: 0.5rem 0;
             font-weight: 600; /* Bold like headings */
             font-size: 1.2rem; /* Larger font size */
-            color: #2d3748; /* Darker color for nav headings */
             background-color: transparent; /* No yellow highlight in nav */
             text-decoration: none;
             transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
             border-radius: 0; /* No border radius */
         }
 
+        /* Specific colors for navigation links */
+        .nav-list .nav-about {
+            color: #007bff; /* Blue */
+        }
+        .nav-list .nav-tutorials {
+            color: #28a745; /* Green */
+        }
+        .nav-list .nav-contact {
+            color: #dc3545; /* Red */
+        }
+
         .nav-list a:hover {
-            color: #3182ce;
+            color: #3182ce; /* Hover color for nav links */
             text-decoration: none;
             transform: translateX(5px); /* Slight slide effect on hover */
             background-color: transparent; /* Keep background transparent */
@@ -219,12 +229,12 @@
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
- 
+    <div class="main-content-wrapper">
         <div class="leftcolumn">
             <ul class="nav-list">
-                <li><a href="#about">About</a></li>
-                <li><a href="#tutorials">Upcoming Tutorials</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#about" class="nav-about">About</a></li>
+                <li><a href="#tutorials" class="nav-tutorials">Upcoming Tutorials</a></li>
+                <li><a href="#contact" class="nav-contact">Contact</a></li>
             </ul>
         </div>
 
@@ -252,14 +262,14 @@
             <section id="contact" class="mb-8">
                 <h2 class="contact">Contact</h2>
                 <ul class="gs">
-                    <li><span class="black">Email: <code>karan24r@isid.ac.in</code></span></li>
+                    <li><span class="black">Email: <code>kthesmart4</code>@<code>gmail.com</code></span></li>
                 </ul>
             </section>
         </div>
     </div>
 
     <footer>
-        Page last modified 01.06.2025. All material copyright &copy; <a href="index.html">Karan Kumar</a> 2025.
+        Page last modified 01.06.2025. All material copyright &copy; Karan Kumar 2025.
     </footer>
 </body>
 </html>
