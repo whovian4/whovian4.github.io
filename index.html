@@ -9,7 +9,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* It's good practice to add the base font-family here or in a minimal config */
         body {
             font-family: 'Nanum Myeongjo', serif;
         }
@@ -34,7 +33,18 @@
                     </li>
                 </ul>
             </nav>
-        </aside>
+
+            <section id="potd" class="mt-8 pt-6 border-t border-gray-300">
+                <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Picture of the Day</h2>
+                <div id="nasa-potd" class="text-center">
+                    <h3 id="potd-title" class="text-md font-semibold text-gray-900 mb-2"></h3>
+                    <a id="potd-link" href="#" target="_blank">
+                        <img id="potd-image" src="" alt="NASA Picture of the Day" class="rounded-md mx-auto mb-2 w-full h-auto object-cover">
+                    </a>
+                    <p id="potd-explanation" class="text-xs text-gray-700 text-left"></p>
+                </div>
+            </section>
+            </aside>
 
         <main class="flex-1 bg-white p-8 rounded-xl shadow-md">
             
@@ -42,13 +52,13 @@
                 <meta itemprop="name" content="Karan Kumar" />
                 <meta itemprop="affiliation" content="Indian Statistical Institute, Delhi" />
                 
-             <h1 class="text-4xl md:text-5xl font-medium font-serif text-gray-800 text-center mb-4">Karan Kumar</h1>
+               <h1 class="text-4xl md:text-5xl font-medium font-serif text-gray-800 text-center mb-4">Karan Kumar</h1>
                 
                 <p class="text-base md:text-lg text-gray-700 leading-relaxed">
                     I'm a PhD student at <a href="https://isid.ac.in" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 bg-yellow-300 hover:bg-yellow-400 p-1 rounded transition">ISI, Delhi</a>. My interests lie primarily in economic theory - axiomatic choice theory, game theory, mechanism design, industrial organization. I also dabble in applied microeconomic theory, especially in the confluence of pure theory of international trade and environmental economics to tackle the regulatory response to climate change. I did my masters - MA in Economics (with specialization in World Economy) from <a href="https://jnu.ac.in/sis/cswe" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 bg-yellow-300 hover:bg-yellow-400 p-1 rounded transition">CITD, JNU</a> and bachelors - BA(Hons) from <a href="https://svc.ac.in/" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 bg-yellow-300 hover:bg-yellow-400 p-1 rounded transition">Sri Venkateswara College, University of Delhi.</a>
                 </p>
             </section>
-            
+
             <section id="tutorials" class="mb-12">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-gray-100">Upcoming Tutorials</h2>
                 <ul class="list-none space-y-3 text-gray-600">
@@ -72,5 +82,38 @@
         Page last modified 01.06.2025. All material copyright &copy; Karan Kumar 2025.
     </footer>
 
+    <script>
+        async function getNasaPictureOfTheDay() {
+            try {
+                const apiKey = 'DEMO_KEY'; // It's better to get your own free API key from https://api.nasa.gov/
+                const response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${apiKey}`);
+                const data = await response.json();
+
+                const potdContainer = document.getElementById('nasa-potd');
+                const titleEl = document.getElementById('potd-title');
+                const imageEl = document.getElementById('potd-image');
+                const linkEl = document.getElementById('potd-link');
+                const explanationEl = document.getElementById('potd-explanation');
+
+                if (data.media_type === 'image') {
+                    titleEl.textContent = data.title;
+                    imageEl.src = data.url; // Use standard URL for faster loading in the preview
+                    imageEl.alt = data.title;
+                    linkEl.href = data.hdurl || data.url; // Link to HD version
+                    explanationEl.textContent = data.explanation;
+                } else {
+                    titleEl.textContent = data.title;
+                    explanationEl.innerHTML = `Today's content is a video. <a href="${data.url}" target="_blank" class="text-blue-600 hover:underline">Click here to watch it.</a> <br><br> ${data.explanation}`;
+                    imageEl.style.display = 'none'; // Hide the image element
+                }
+
+            } catch (error) {
+                console.error('Error fetching NASA Picture of the Day:', error);
+                document.getElementById('potd').innerHTML = '<p>Picture of the day is currently unavailable.</p>';
+            }
+        }
+
+        window.addEventListener('load', getNasaPictureOfTheDay);
+    </script>
 </body>
-</html
+</html>
