@@ -9,40 +9,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@300;400;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
+        /* It's good practice to add the base font-family here or in a minimal config */
         body {
             font-family: 'Nanum Myeongjo', serif;
-        /* ===== START: Faded Background CSS ===== */
-        #sidebar {
-            position: relative; /* This is essential for the background effect */
-            overflow: hidden;   /* Keeps the background contained within the rounded corners */
         }
-
-        #sidebar::before {
-            content: ''; /* Creates a pseudo-element */
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-
-            /* --- Your Image and Effect --- */
-            background-image: url('gallifreyan.jpg');
-            background-size: cover; /* Stretches the image to cover the area */
-            background-position: center; /* Centers the image */
-            opacity: 0.07; /* KEY: This makes it very faded. Adjust between 0.05 and 0.15 */
-
-            z-index: 0; /* Places the background behind the content */
-        }
-        /* ===== END: Faded Background CSS ===== */
-    </style> }
     </style>
 </head>
 
 <body class="bg-gray-100 text-gray-800 flex flex-col min-h-screen" itemscope itemtype="http://schema.org/WebPage">
-    
+
     <div class="w-full max-w-6xl mx-auto flex flex-col lg:flex-row gap-6 p-4 mt-8 flex-grow">
-        
-        <aside id="sidebar" class="lg:w-1/4 lg:sticky top-8 h-fit bg-gray-200 p-6 rounded-xl shadow-sm">
+
+        <aside class="lg:w-1/4 lg:sticky top-8 h-fit bg-gray-200 p-6 rounded-xl shadow-sm">
             <nav>
                 <ul class="space-y-4">
                     <li>
@@ -56,6 +34,7 @@
                     </li>
                 </ul>
             </nav>
+        </aside>
 
             <section id="potd" class="mt-8 pt-6 border-t border-gray-300">
                 <h2 class="text-xl font-bold text-gray-800 mb-4 text-center">Picture of the Day</h2>
@@ -70,17 +49,19 @@
             </aside>
 
         <main class="flex-1 bg-white p-8 rounded-xl shadow-md">
-            
+
             <section id="about" class="mb-12" itemprop="mainEntity" itemscope itemtype="http://schema.org/Person">
                 <meta itemprop="name" content="Karan Kumar" />
                 <meta itemprop="affiliation" content="Indian Statistical Institute, Delhi" />
-                
+
+             <h1 class="text-4xl md:text-5xl font-medium font-serif text-gray-800 text-center mb-4">Karan Kumar</h1>
                <h1 class="text-4xl md:text-5xl font-medium font-serif text-gray-800 text-center mb-4">Karan Kumar</h1>
-                
+
                 <p class="text-base md:text-lg text-gray-700 leading-relaxed">
                     I'm a PhD student at <a href="https://isid.ac.in" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 bg-yellow-300 hover:bg-yellow-400 p-1 rounded transition">ISI, Delhi</a>. My interests lie primarily in economic theory - axiomatic choice theory, game theory, mechanism design, industrial organization. I also dabble in applied microeconomic theory, especially in the confluence of pure theory of international trade and environmental economics to tackle the regulatory response to climate change. I did my masters - MA in Economics (with specialization in World Economy) from <a href="https://jnu.ac.in/sis/cswe" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 bg-yellow-300 hover:bg-yellow-400 p-1 rounded transition">CITD, JNU</a> and bachelors - BA(Hons) from <a href="https://svc.ac.in/" target="_blank" rel="noopener noreferrer" class="font-semibold text-gray-900 bg-yellow-300 hover:bg-yellow-400 p-1 rounded transition">Sri Venkateswara College, University of Delhi.</a>
                 </p>
             </section>
+            
 
             <section id="tutorials" class="mb-12">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-gray-100">Upcoming Tutorials</h2>
@@ -90,7 +71,7 @@
                     <li><strong>Tutorial 3: Axiomatic Choice Theory Explained</strong> - Delving into the foundations of rational decision-making.</li>
                 </ul>
             </section>
-            
+
             <section id="contact">
                 <h2 class="text-2xl font-bold text-gray-800 mb-6 pb-2 border-b-2 border-gray-100">Contact</h2>
                 <ul class="list-none text-gray-600">
@@ -126,7 +107,7 @@
                     explanationEl.textContent = data.explanation;
                 } else {
                     titleEl.textContent = data.title;
-                    explanationEl.innerHTML = `Today's content is a video. <a href="${data.url}" target="_blank" class="text-blue-600 hover:underline">Click here to watch it.</a> <br><br> ${data.explanation}`;
+                    explanationEl.innerHTML = `Today's content is a video. <a href="${data.url}" target="_blank" class="text-blue-600 hover:underline">Click here to watch it.</a> <br><br> ${data.explanation}`;Add commentMore actions
                     imageEl.style.display = 'none'; // Hide the image element
                 }
 
@@ -139,4 +120,5 @@
         window.addEventListener('load', getNasaPictureOfTheDay);
     </script>
 </body>
+</html
 </html>
