@@ -91,3 +91,35 @@ button:hover {
     height: 500px;
     border: none;
 }
+
+#query-section {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#raise-query-btn {
+    background-color: #28a745; /* Green */
+}
+#raise-query-btn:hover {
+    background-color: #218838;
+}
+
+#no-query-btn {
+    background-color: #dc3545; /* Red */
+}
+#no-query-btn:hover {
+    background-color: #c82333;
+}
+
+#query-message {
+    width: 100%;
+    color: #155724; /* Dark Green for success message */
+    font-weight: bold;
+    text-align: center;
+}

@@ -22,8 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const contentDisplay = document.getElementById('content-display');
     const showFeedbackBtn = document.getElementById('show-feedback-btn');
     const showSchemeBtn = document.getElementById('show-scheme-btn');
+    const raiseQueryBtn = document.getElementById('raise-query-btn');
+    const noQueryBtn = document.getElementById('no-query-btn');
+    const queryMessage = document.getElementById('query-message');
 
     let currentRollNo = null;
+    const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSd8j6w2_rMZTeaPH9Z1scWih_8P-UgprDugUW__E85VLQ5nUA/viewform?usp=pp_url&entry.2091676531=ROLLNUMBER_PLACEHOLDER';
 
     // --- Functions ---
     function showView(view) {
@@ -66,5 +70,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     showSchemeBtn.addEventListener('click', () => {
         showView('scheme');
+    });
+
+    raiseQueryBtn.addEventListener('click', () => {
+        if (currentRollNo) {
+            const prefilledUrl = googleFormUrl.replace('ROLLNUMBER_PLACEHOLDER', currentRollNo);
+            window.open(prefilledUrl, '_blank');
+        }
+    });
+
+    noQueryBtn.addEventListener('click', () => {
+        queryMessage.textContent = 'Thank you! Your response has been recorded.';
+        queryMessage.style.display = 'block';
+        raiseQueryBtn.style.display = 'none';
+        noQueryBtn.style.display = 'none';
     });
 });
