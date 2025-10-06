@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math 271: Class Test 4</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .student-info {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math 271: Class Test 4</h1>
+    <h2>Student Evaluation Feedback</h2>
+
+    <div class="student-info">
+        <strong>Student:</strong> Raghav Gupta<br>
+        <strong>Roll No:</strong> QD2521
+    </div>
+
+    <h3>(a) Sequence Converging to Supremum (14/15 Marks)</h3>
+    <ul>
+        <li><strong>Existence of Supremum (0/2):</strong> You needed to write that since S is bounded above, by the Continuum Property, a supremum exists. I have not deducted marks for this.</li>
+        <li><strong>Supremum Definition (5/5):</strong> You correctly used the property that "s - ϵ is not an upper bound" to justify the existence of an element in the desired interval.</li>
+        <li><strong>Sequence Construction (3/4):</strong> The construction of the sequence {x_n}_{n∈N} using ϵ = 1/n is incorrect. You have stated, "for ϵ = n ∃x_n ∈ S s.t. S - 1/n ≤ x_n ≤ S". You should write, instead, for ϵ = 1/n ∃x_n ∈ S s.t. S - 1/n ≤ x_n ≤ S.</li>
+        <li><strong>Inequality (2/2):</strong> The inequality s - 1/n ≤ x_n ≤ s is correctly stated.</li>
+        <li><strong>Conclusion (2/2):</strong> You correctly applied the Squeeze Theorem to conclude convergence.</li>
+    </ul>
+
+    <h3>(b) Sequence Diverging to +∞ (14/15 Marks)</h3>
+    <ul>
+        <li><strong>Stating Unbounded Property (3/3):</strong> You correctly used the property of an unbounded set by stating that for any real H > 0, there exists an x_H > H.</li>
+        <li><strong>Sequence Construction (6/6):</strong> Your construction of a sequence {x_n}_{n∈N} ⊂ S where x_n > n is correct.</li>
+        <li><strong>Definition of Divergence (2/2):</strong> The formal definition of divergence was stated correctly.</li>
+        <li><strong>Completion of Proof (3/4):</strong> You attempted to complete the proof by using the argument that any real H can be bounded by two natural numbers, N - 1 ≤ H ≤ N. This is not always true, e.g., for (H = 1/2) or (H = 1/√2) and unnecessarily complicates the proof. For instance, for (1/√2) > 0 ∄N ∈ N: (N - 1) ≤ (1/√2) ≤ N. You should have instead tried to show that for any H > 0, there always exists a natural number N > H (by Archimedean Property) such that for all indices n ≥ N, x_n > H.</li>
+        <li><strong>Critique:</strong> I have deducted 1 point for unnecessary complicating the final proof.</li>
+    </ul>
+
+    <h3>(c) Boundedness of a Continuous Function (35/35 Marks)</h3>
+    <p>Your direct proof correctly followed the logic of the uncommon direct proof outlined in the marking scheme (Aliter).</p>
+    <ul>
+        <li><strong>Setup (6/6):</strong> You correctly set up the proof by picking an arbitrary sequence from the domain C, {c_n}_{n∈N}.</li>
+        <li><strong>Defining Corresponding Sequence (6/6):</strong> You correctly worked with the sequence in the domain and later considered its image under f, which is, {f(c_n)}_{n∈N}, a valid logical path.</li>
+        <li><strong>Using Compactness of C (10/10):</strong> You correctly invoked the compactness of C and the Bolzano-Weierstrass theorem to find a convergent subsequence {c_{n_k}}_{k∈N} → c* ∈ C.</li>
+        <li><strong>Exploiting Continuity (6/6):</strong> You correctly used the continuity of f to state that the image subsequence {f(c_{n_k})}_{k∈N} ⊂ {f(c_n)}_{n∈N} converges to f(c*), and noted that f(c*) ∈ f(C). You should have mentioned that as f(c*) ∈ R^n, ||f(c*)|| < ∞ and hence, f(C) is closed. For if f(x_1, x_2) = (tan x_1, x_2) then lim_(x_1→π/2) f(x_1, 1) ∉ R^2 and then f(C) will not be closed. I have not deducted any points for thus.</li>
+        <li><strong>Conclusion on Compactness (5/5):</strong> You correctly concluded that since any arbitrary sequence in f(C) has a convergent subsequence, the set f(C) is sequentially compact and therefore compact.</li>
+        <li><strong>Conclusion on Boundedness (2/2):</strong> You correctly stated that a compact set is necessarily bounded.</li>
+    </ul>
+
+    <h3>(d) Extreme Value Theorem (35/35 Marks)</h3>
+    <p>Another flawless proof using the properties of the image set f(C).</p>
+    <ul>
+        <li><strong>Supremum Existence (8/8):</strong> You correctly stated that the image set f(C) is bounded and has a supremum M. You should also state the Continuum Property to justify the existence of supremum.</li>
+        <li><strong>Sequence Construction (8/8):</strong> You correctly constructed a sequence of values in f(C) that converges to the supremum, M.</li>
+        <li><strong>Closed Set Argument (12/12):</strong> You correctly argued that since f(C) is compact (from part c), it must be closed, and therefore the limit of the sequence, M, must also be an element of f(C).</li>
+        <li><strong>Attainment (5/5):</strong> You correctly concluded that since the supremum M belongs to the set, it is the maximum, and there must exist an x_M ∈ C such that f(x_M) = M.</li>
+        <li><strong>Final Conclusion (2/2):</strong> The final statement covering both the maximum and minimum is correct.</li>
+    </ul>
+
+    <h3>Final Score:</h3>
+    <p>
+        Part (a): 14 Marks<br>
+        Part (b): 14 Marks<br>
+        Part (c): 35 Marks<br>
+        Part (d): 35 Marks<br>
+        <strong>Total: 98 Marks</strong>
+    </p>
+    <p>
+        Dated: 06<sup>th</sup> October, 2025
+    </p>
+    <p>
+        Clarifications/ Changes:
+        ________________________________________________________________
+        ________________________________________________________________
+        ________________________________________________________________
+    </p>
+</body>
+</html>
